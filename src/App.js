@@ -1,9 +1,10 @@
 import './App.css';
-import {Header} from './components/Header';
 import Characters from './components/Characters';
 import Search from './components/Search';
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
+import ComicPage from './components/ComicPage';
+
 
 const hash = "34d04f83c93da8366bd3fb429d9efd56";
 
@@ -33,9 +34,8 @@ function App() {
 
   return (
     <div className="container">
-      <Header />
       <Search search={(q)=>setQuery(q)} />
-      <Characters items={items} isLoading={isLoading}/>
+      <Characters hash={hash} items={items} isLoading={isLoading}/>
     </div>
   );
 }
